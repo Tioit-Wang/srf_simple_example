@@ -14,7 +14,7 @@ app = Sanic(__name__, request_class=SRFRequest)
 route = ViewSetRouter()
 route.register(TestView, '/TestView', 'test', True)
 for i in route.urls:
-    i.pop('is_base')
+    i.pop('upgrade')
     app.add_route(**i, methods=ALL_METHOD)
 
 register_tortoise(
